@@ -2,8 +2,11 @@
   "name": "kosnote",
   "version": "1.0.0",
   "private": true,
-  "description": "Kosnote - 淨利計算機，幫助商家快速計算成本、定價與利潤。",
+  "homepage": "https://你的帳號.github.io/Kosnote",
+  "description":  "Kosnote - 淨利計算機，幫助商家快速計算成本、定價與利潤。",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
