@@ -40,7 +40,7 @@ function CostCalculator({ settings, inputs, setInputs }) {
         <Row gutter={16} align="middle" style={{marginBottom:16}}>
           <Col span={6}>
             <div
-              style={{border:'2px solid #bbb',borderRadius:14,padding:'0 0',textAlign:'center',fontSize:20, height:30, display:'flex',alignItems:'center',justifyContent:'center', cursor:'pointer', boxShadow: showCurrencyModal ? '0 0 0 2px #124aff' : undefined, borderColor: showCurrencyModal ? '#124aff' : '#bbb'}}
+              style={{border:'2px solid #bbb',borderRadius:14,padding:'0 0',textAlign:'center',fontSize:20, height:52, display:'flex',alignItems:'center',justifyContent:'center', cursor:'pointer', boxShadow: showCurrencyModal ? '0 0 0 2px #124aff' : undefined, borderColor: showCurrencyModal ? '#124aff' : '#bbb'}}
               onClick={() => setShowCurrencyModal(true)}
             >
               {foreignCurrency}
@@ -53,6 +53,9 @@ function CostCalculator({ settings, inputs, setInputs }) {
               placeholder="請輸入金額"
               style={{fontSize:20, height:30, textAlign:'right'}}
             />
+            <div style={{fontSize:16, color:'#000', textAlign:'right', marginTop:4}}>
+              1 {foreignCurrency} = {(1/rate).toFixed(2)} TWD
+            </div>
           </Col>
         </Row>
         <Row gutter={16} align="middle" style={{marginBottom:0}}>
@@ -66,12 +69,8 @@ function CostCalculator({ settings, inputs, setInputs }) {
               placeholder="請輸入台幣金額"
               style={{fontSize:20, height:30, textAlign:'right'}}
             />
-          </Col>
-        </Row>
-        <Row style={{marginTop:12}}>
-          <Col span={24}>
-            <div style={{fontSize:20, color:'#444', textAlign:'right', letterSpacing:1}}>
-              1 TWD = {(1 * rate).toFixed(3)} {foreignCurrency}
+            <div style={{fontSize:16, color:'#000', textAlign:'right', marginTop:4}}>
+              1 TWD = {rate.toFixed(3)} {foreignCurrency}
             </div>
           </Col>
         </Row>
