@@ -53,6 +53,10 @@ function SettingsModal({ open, onClose, settings, setSettings }) {
                 <Input
                   addonBefore={c}
                   type="number"
+                  inputMode="decimal"
+                  style={{MozAppearance:'textfield'}}
+                  min="0"
+                  step="any"
                   value={local.rates[c]}
                   onChange={e => handleRateChange(c, e.target.value)}
                 />
@@ -67,6 +71,10 @@ function SettingsModal({ open, onClose, settings, setSettings }) {
                 <Input
                   addonBefore={`重量${i+1}`}
                   type="number"
+                  inputMode="decimal"
+                  style={{MozAppearance:'textfield'}}
+                  min="0"
+                  step="any"
                   value={v}
                   onChange={e => handleFreightChange(i, e.target.value)}
                 />
@@ -80,6 +88,10 @@ function SettingsModal({ open, onClose, settings, setSettings }) {
               <Input
                 addonBefore="運費"
                 type="number"
+                inputMode="decimal"
+                style={{MozAppearance:'textfield'}}
+                min="0"
+                step="any"
                 value={local.fixed.shipping}
                 onChange={e=>handleFixedChange('shipping', e.target.value)}
               />
@@ -88,6 +100,10 @@ function SettingsModal({ open, onClose, settings, setSettings }) {
               <Input
                 addonBefore="雜費"
                 type="number"
+                inputMode="decimal"
+                style={{MozAppearance:'textfield'}}
+                min="0"
+                step="any"
                 value={local.fixed.misc}
                 onChange={e=>handleFixedChange('misc', e.target.value)}
               />
@@ -97,6 +113,10 @@ function SettingsModal({ open, onClose, settings, setSettings }) {
                 addonBefore="手續費"
                 addonAfter="%"
                 type="number"
+                inputMode="decimal"
+                style={{MozAppearance:'textfield'}}
+                min="0"
+                step="any"
                 value={local.feePercent}
                 onChange={e=>handleFeePercent(e.target.value)}
               />

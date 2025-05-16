@@ -1,8 +1,8 @@
 {
-  "name": "profit-calculator-web",
+  "name": "kosnote",
   "version": "1.0.0",
   "private": true,
-  "description": "淨利計算機 web 版",
+  "description": "Kosnote - 淨利計算機，幫助商家快速計算成本、定價與利潤。",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,6 +10,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "antd": "^5.25.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

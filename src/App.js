@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import SettingsModal from "./components/SettingsModal";
 import RateModal from "./components/RateModal";
 import CostCalculator from "./components/CostCalculator";
@@ -43,8 +44,14 @@ function App() {
   return (
     <div className="container">
       <header style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <h2>淨利計算機</h2>
-        <button onClick={() => setSettingsOpen(true)}>設定</button>
+        <img src="/kosnote.svg" alt="Kosnote 品牌 Logo" style={{height:48,display:'block',paddingBottom:10}} />
+        <button
+          style={{border:'none',background:'none',boxShadow:'none',padding:0,cursor:'pointer'}}
+          onClick={()=>setSettingsOpen(true)}
+          aria-label="設定"
+        >
+          <i className="fas fa-gear" style={{fontSize:28,color:'#444'}}></i>
+        </button>
       </header>
       <CostCalculator
         settings={settings}

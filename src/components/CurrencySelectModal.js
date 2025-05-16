@@ -17,47 +17,42 @@ function CurrencySelectModal({ open, onClose, selected, onSelect, rates }) {
       footer={null}
       width={420}
       centered
-      title={<div style={{textAlign:'center',fontWeight:700,fontSize:30}}>匯率設定</div>}
-      closeIcon={<span style={{fontSize:32,lineHeight:1}}>×</span>}
-      bodyStyle={{padding:'8px 16px 0 16px'}}
+      closeIcon={<span style={{fontSize:28,lineHeight:1}}>×</span>}
+      bodyStyle={{padding:'16px 24px 0 24px', background:'#f8fafd'}} 
       destroyOnClose
     >
-      <div style={{textAlign:'center',marginBottom:10,fontSize:17}}>
-        <hr style={{margin:'4px 0 10px 0'}}/>
-        <div style={{color:'#444',fontSize:18,marginBottom:8}}>( TWD 1 元可以換到多少 )</div>
+      <div style={{marginBottom:12, textAlign:'center'}}>
+        <span style={{fontSize:15, color:'#888'}}>請選擇幣別</span>
       </div>
-      <Row gutter={[12,12]} justify="center">
+      <div style={{margin:'0 0 8px 0'}}>
         {currencyList.map((c, idx) => (
-          <Col span={12} key={c.code} style={{marginBottom:8}}>
-            <div
-              onClick={() => {
-                if (c.code !== selected) onSelect(c.code);
-              }}
-              style={{
-                border: c.code === selected ? '2.5px solid #124aff' : '2px solid #bbb',
-                borderRadius: 18,
-                padding: '10px 0',
-                fontWeight: 700,
-                fontSize: 28,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                background: '#fff',
-                cursor: c.code === selected ? 'default' : 'pointer',
-                color: '#222',
-                boxShadow: c.code === selected ? '0 0 0 2px #e6edff' : undefined,
-                transition: 'border 0.2s',
-              }}
-            >
-              <span style={{marginLeft:18}}>{c.label}</span>
-              <span style={{marginRight:18}}>{rates[c.code]}</span>
-            </div>
-          </Col>
+          <div
+            key={c.code}
+            onClick={() => {
+              if (c.code !== selected) onSelect(c.code);
+            }}
+            style={{
+              border: c.code === selected ? '2.5px solid #124aff' : '2px solid #dbe6f7',
+              borderRadius: 16,
+              padding: '13px 0',
+              fontWeight: c.code === selected ? 700 : 500,
+              fontSize: 18,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: c.code === selected ? '#f4f8ff' : '#fff',
+              cursor: c.code === selected ? 'default' : 'pointer',
+              color: c.code === selected ? '#124aff' : '#222',
+              boxShadow: c.code === selected ? '0 0 0 2px #e6edff' : undefined,
+              transition: 'border 0.2s',
+              marginBottom: 12,
+              letterSpacing: 1,
+            }}
+          >
+            <span style={{marginLeft:20, fontSize:20}}>{c.label}</span>
+            <span style={{marginRight:20, fontSize:18, color:'#444', fontWeight:500}}>{rates[c.code]}</span>
+          </div>
         ))}
-      </Row>
-      <div style={{marginTop:18,display:'flex',alignItems:'center',fontSize:17,color:'#444'}}>
-        <span style={{fontSize:20,marginRight:4}}>！</span>
-        <span>調整匯率可到設定頁操作</span>
       </div>
     </Modal>
   );
