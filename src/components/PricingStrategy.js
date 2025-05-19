@@ -23,12 +23,17 @@ function PricingStrategy({ cost, shipping, misc, feePercent }) {
   if (manualProfit !== "") {
     // 使用者手動輸入淨利率，反推定價
     profitRate = Number(manualProfit);
-    const netRate = profitRate / 100;
-    price = baseCost / (1 - (fee + netRate));
+    // 基於成本的淨利率計算定價
+    // 利潤 = 成本 × 淨利率%
+    // 定價 = (成本 + 利潤) ÷ (1-手續費)
+    const profit = baseCost * (profitRate / 100);
+    price = (baseCost + profit) / (1 - fee);
   } else if (manualPrice !== "") {
     // 使用者手動輸入定價，反推淨利率
     price = Number(manualPrice);
-    // 反推利潤率
+    // 基於成本的淨利率
+    // 利潤 = 定價×(1-手續費) - 成本
+    // 淨利率% = (利潤÷成本)×100
     profitRate = baseCost > 0 ? ((price * (1 - fee) - baseCost) / baseCost) * 100 : 0;
   } else {
     // 預設顯示 0% 淨利率
