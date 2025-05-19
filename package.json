@@ -2,7 +2,7 @@
   "name": "kosnote",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://stevenchentw.github.io/Kosnote",
+  "homepage": "https://kosnote.co",
   "description":  "Kosnote - 淨利計算機，幫助商家快速計算成本、定價與利潤。",
   "scripts": {
     "predeploy": "npm run build",

@@ -40,7 +40,7 @@ function PricingStrategy({ cost, shipping, misc, feePercent }) {
   const profit = price * (1 - fee) - (Number(cost) + Number(shipping) + Number(misc));
 
   return (
-    <div style={{border:'2px solid #888', borderRadius:14, padding:'16px 18px', margin:'24px 0 0 0', fontSize:20, color:'#333', background:'#fff', maxWidth:430}}>
+    <div style={{background:'#fff',borderRadius:18,boxShadow:'0 2px 8px #e6eef7',margin:'10px 0 0 0',maxWidth:480,padding:'10px',fontSize:20,color:'#333'}}>
       <div style={{fontWeight:500, marginBottom:12}}>定價策略</div>
       <div style={{display:'flex', gap:8, marginBottom:16, justifyContent:'center'}}>
         {QUICK_PROFITS.map((p) => (

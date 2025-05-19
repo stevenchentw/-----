@@ -35,7 +35,7 @@ function CostCalculator({ settings, inputs, setInputs }) {
 
   return (
     <React.Fragment>
-      <div style={{border:'2px solid #888', borderRadius:14, background:'#fff', marginBottom:24, padding:20, fontSize:20}}>
+      <div style={{background:'#fff',borderRadius:18,boxShadow:'0 2px 8px #e6eef7',margin:'20px auto 10px auto',maxWidth:480,padding:'10px'}}>
         <Title level={4} style={{marginTop:2, marginBottom:8, fontSize:20}}>成本試算</Title>
         <Row gutter={16} align="middle" style={{marginBottom:16}}>
           <Col span={6}>

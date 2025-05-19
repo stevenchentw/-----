@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="container">
       <header style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-        <img src="/kosnote.svg" alt="Kosnote 品牌 Logo" style={{height:48,display:'block',paddingBottom:10}} />
+        <img src="/kosnote.svg" alt="Kosnote 品牌 Logo" style={{height:40,display:'block',paddingBottom:5}} />
         <button
           style={{border:'none',background:'none',boxShadow:'none',padding:0,cursor:'pointer'}}
           onClick={()=>setSettingsOpen(true)}
